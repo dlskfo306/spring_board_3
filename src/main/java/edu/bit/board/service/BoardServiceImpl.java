@@ -33,6 +33,7 @@ public class BoardServiceImpl implements BoardService{
         //read = 선택한 bid의 모든 값 불러오기
     }
 
+    // 수정
     @Override
     public void modify(BoardVO boardVO) {
         log.info("service:modify()..");
@@ -40,6 +41,7 @@ public class BoardServiceImpl implements BoardService{
         
     }
 
+    // 삭제
     @Override
     public void remove(int bid) {
         log.info("service:delete()..");
@@ -47,6 +49,7 @@ public class BoardServiceImpl implements BoardService{
         
     }
 
+    // 글작성
     @Override
     public void writeBoard(BoardVO boardVO) {
         log.info("service:writeBoard()..");
@@ -54,6 +57,7 @@ public class BoardServiceImpl implements BoardService{
         
     }
 
+    // 답변달기
     @Override
     public void writeReply(BoardVO boardVO) {
         log.info("service:writeReply()..");
@@ -61,12 +65,14 @@ public class BoardServiceImpl implements BoardService{
         boardMapper.insertReply(boardVO);
     }
 
+    // 조회수
     @Override
     public void upHit(int bid) {
         boardMapper.updateHit(bid);
         
     }
 
+    // 페이징
     @Override
     public int getTotal(Criteria cri) {
         log.info("service:getTotal()..");

@@ -10,8 +10,10 @@ public interface BoardService {
 	
     BoardVO get(int bid);
 
+    //수정
     void modify(BoardVO boardVO);
 
+    //삭제
     void remove(int bid);
 
     //댓글

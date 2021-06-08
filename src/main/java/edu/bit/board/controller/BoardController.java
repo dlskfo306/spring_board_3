@@ -122,7 +122,6 @@ public class BoardController {
     }
 
     // tables 템플릿 적용
-    
     @RequestMapping("/tables")
     public String tables(Criteria cri, Model model) {
         log.info("tables()..");
@@ -134,7 +133,7 @@ public class BoardController {
         log.info("total" + total);
         model.addAttribute("pageMaker", new PageVO(cri, total));
 
-        return "tables";// view의 이름을 결정 (.jsp)
+        return "tables";
     }
     
 }

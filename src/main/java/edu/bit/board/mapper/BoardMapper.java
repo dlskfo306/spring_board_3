@@ -13,16 +13,20 @@ public interface BoardMapper {
 
     BoardVO read(int bid);
 
+    //수정
     void update(BoardVO boardVO);
 
+    //삭제
     void delete(int bid);
 
+    //글 작성
     void insertBoard(BoardVO boardVO);
 
     //댓글 관련
     void updateShape(BoardVO boardVO);
     void insertReply(BoardVO boardVO);
 
+    //조회수
     void updateHit(int bid);
 
     //페이징처리

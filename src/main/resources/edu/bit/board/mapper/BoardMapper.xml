@@ -15,18 +15,21 @@
 	]]>
 	</select>
 	
+	<!-- 수정 -->
 	<update id="update">
 	<![CDATA[
 		update mvc_board set bname=#{bname}, btitle=#{btitle}, bcontent=#{bcontent} where bid=#{bid}
 	]]>
 	</update>
 	
+	<!-- 삭제 -->
 	<delete id="delete">
 	<![CDATA[
 		delete from mvc_board where bid=#{bid}
 	]]>
 	</delete>
 	
+	<!-- 글작성 -->
 	<insert id="insertBoard">
 	<![CDATA[
 		insert into mvc_board (bid, bname, btitle, bcontent, bhit, bgroup, bstep, bindent) 
@@ -34,12 +37,14 @@
 	]]>
 	</insert>
 	
+	<!-- 답변 달 경우 답변 달리는 글과 그 밑의 글 사이에 답변이 들어가야 한다. -->
 	<update id="updateShape">
 	<![CDATA[
 		update mvc_board set bstep = bstep+1 where bgroup = #{bgroup} and bstep > #{bstep}
 	]]>
 	</update>
 	
+	<!-- 답변 달기 -->
 	<insert id="insertReply">
 	<![CDATA[
 		insert into mvc_board (bid, bname, btitle, bcontent, bgroup, bstep, bindent)
@@ -47,12 +52,14 @@
 	]]>
 	</insert>
 	
+	<!-- 조회수 -->
 	<update id="updateHit">
 	<![CDATA[
 		update mvc_board set bhit = bhit+1 where bid = #{bid}
 	]]>
 	</update>
 	
+	<!-- 페이징 -->
 	<select id="getTotalCount" resultType="int">
 	<![CDATA[
 		select count(*) from mvc_board
