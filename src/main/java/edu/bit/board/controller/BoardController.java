@@ -70,7 +70,7 @@ public class BoardController {
 
         boardService.modify(boardVO);
 
-        return "redirect:list";
+        return "redirect:list"; //list로 페이지 넘기기
     }
 
     // 삭제
@@ -127,7 +127,7 @@ public class BoardController {
         log.info("tables()..");
         log.info(cri);
 
-        model.addAttribute("list", boardService.getList(cri)); // list.jsp 만들고 나서
+        model.addAttribute("list", boardService.getList(cri)); 
 
         int total = boardService.getTotal(cri);
         log.info("total" + total);

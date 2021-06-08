@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.bit</groupId>
 	<artifactId>board</artifactId>
-	<name>spring_board_2</name>
+	<name>spring_board_3</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	
